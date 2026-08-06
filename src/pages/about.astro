@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+---
+<BaseLayout title="About — Kunal Janghel" description="Career journey and background">
+  <article class="max-w-reading mx-auto px-6 py-16">
+    <SectionHeader title="about" />
+    <div class="prose max-w-none">
+      <p>
+        I'm a Staff Software Engineer working at the intersection of AI agents and AI security.
+        Based in Bengaluru, originally from Jamshedpur.
+      </p>
+
+      <h2>How I got here</h2>
+      <p>
+        I graduated from Maharishi Markandeshwar University in 2018 with a B.Tech in Computer Science.
+        Started at Infosys on the C# / Java training track, then self-learned AngularJS and shipped my
+        first production code fixes.
+      </p>
+      <p>
+        In January 2019 I joined Barracuda Networks as an Associate Software Engineer. I worked on the WAF
+        release stream — Perl and Python automation, modernising legacy AngularJS surfaces, self-learning
+        React on the job. By mid-2021 I was a Software Engineer, and I was sent abroad (the youngest on
+        the team at the time) to take end-to-end ownership of a project hand-off. In June 2023 I moved
+        up to Senior Software Engineer.
+      </p>
+
+      <h2>What I'm working on now</h2>
+      <p>
+        I'm the sole architect of an <strong>MCP server with RAG</strong> that turns Barracuda's
+        20,596-line WAAS OpenAPI spec into something Claude and other MCP-compatible agents can query
+        in natural language. Custom RAG pipeline, 21-intent evaluation harness, JWKS auth, three-service
+        Docker deployment with Kustomize overlays for public vs private cloud.
+      </p>
+      <p>
+        I also pitched, prototyped, and shipped the <strong>multi-tenant migration</strong> that cut
+        our SaaS VM cost by ~60% — one of the pieces of work I'm most proud of, because the leverage
+        ratio (small architectural change → very large recurring saving) is exactly what I find satisfying.
+      </p>
+
+      <h2>Beyond work</h2>
+      <p>
+        On weekends I build small personal projects — <a href="/projects/kosha">Kosha</a> (a personal
+        investment tracker) and <a href="/projects/event-planner">Event Planner</a> (a shared budget PWA
+        we used for our own wedding). Both live in production on Supabase's free tier. If you like
+        pattern-matching to see how I think about code, they're a reasonable window.
+      </p>
+
+      <h2>What I'm looking for</h2>
+      <p>
+        Roles where AI-agent engineering and application-security thinking overlap. Distributed
+        systems where product decisions have a measurable dollar impact. Teams that ship.
+      </p>
+      <p>
+        <a href="mailto:hello@janghel.com">hello@janghel.com</a> · <a href="https://www.linkedin.com/in/kunal-janghel/">LinkedIn</a> · <a href="/Kunal_Janghel_Resume.pdf" download>Download resume (PDF)</a>
+      </p>
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+---
+<BaseLayout title="Resume — Kunal Janghel" description="Downloadable CV">
+  <article class="max-w-reading mx-auto px-6 py-16">
+    <SectionHeader title="resume" />
+
+    <div class="prose max-w-none">
+      <p>
+        <strong>Kunal Janghel</strong><br />
+        Staff Software Engineer · AI Agents + AppSec<br />
+        Bengaluru, India (Remote) · <a href="mailto:hello@janghel.com">hello@janghel.com</a>
+      </p>
+      <p>
+        Seven years at Barracuda Networks across WAF and WAAS, now focused at the intersection of AI
+        agents and AI security. Built an MCP server with RAG over a 20k-line OpenAPI spec, led the
+        multi-tenant migration that cut VM cost ~60%, and continue to ship AI-agent + application-security
+        code that runs in front of real customer traffic.
+      </p>
+    </div>
+
+    <div class="mt-10">
+      <a
+        href="/Kunal_Janghel_Resume.pdf"
+        download
+        class="inline-flex items-center gap-2 px-5 py-3 border border-accent text-accent font-mono text-sm rounded hover:bg-accent hover:text-bg transition-colors"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download resume (PDF)
+      </a>
+    </div>
+
+    <p class="mt-8 font-mono text-xs text-fg-muted">
+      Prefer a fuller history? See <a href="/about" class="text-accent hover:underline">about</a>
+      or <a href="/projects" class="text-accent hover:underline">projects</a>.
+    </p>
+  </article>
+</BaseLayout>

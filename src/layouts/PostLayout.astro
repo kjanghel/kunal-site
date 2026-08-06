@@ -1,0 +1,16 @@
+---
+import BaseLayout from './BaseLayout.astro';
+interface Props { title: string; description: string; date: Date; }
+const { title, description, date } = Astro.props;
+const dateStr = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+<BaseLayout title={`${title} — Kunal Janghel`} description={description} ogType="article">
+  <article class="max-w-reading mx-auto px-6 py-16">
+    <a href="/blog" class="font-mono text-sm text-fg-muted hover:text-accent transition-colors">← writing</a>
+    <h1 class="text-4xl font-bold tracking-tight mt-4">{title}</h1>
+    <p class="mt-2 font-mono text-sm text-fg-muted">{dateStr}</p>
+    <div class="prose max-w-none mt-10 leading-relaxed">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

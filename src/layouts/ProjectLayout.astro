@@ -1,0 +1,30 @@
+---
+import BaseLayout from './BaseLayout.astro';
+interface Props {
+  title: string;
+  subtitle: string;
+  tags: string[];
+  liveUrl?: string;
+  repoUrl?: string;
+}
+const { title, subtitle, tags, liveUrl, repoUrl } = Astro.props;
+---
+<BaseLayout title={`${title} — Kunal Janghel`} description={subtitle}>
+  <article class="max-w-reading mx-auto px-6 py-16">
+    <a href="/projects" class="font-mono text-sm text-fg-muted hover:text-accent transition-colors">← projects</a>
+    <h1 class="text-4xl font-bold tracking-tight mt-4">{title}</h1>
+    <p class="text-fg-muted mt-2">{subtitle}</p>
+    <div class="mt-4 flex flex-wrap gap-2">
+      {tags.map(t => (
+        <span class="font-mono text-xs text-fg-muted border border-border rounded px-2 py-0.5">{t}</span>
+      ))}
+    </div>
+    <div class="mt-4 flex gap-4 font-mono text-sm">
+      {liveUrl && <a href={liveUrl} class="text-accent hover:underline">↗ live</a>}
+      {repoUrl && <a href={repoUrl} class="text-accent hover:underline">↗ repo</a>}
+    </div>
+    <div class="prose mt-10 leading-relaxed max-w-none">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

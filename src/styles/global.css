@@ -1,0 +1,69 @@
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/jetbrains-mono';
+@import 'tailwindcss';
+
+@theme {
+  --color-bg: #0a0a0a;
+  --color-bg-alt: #111111;
+  --color-fg: #ededed;
+  --color-fg-muted: #888888;
+  --color-accent: #f5a623;
+  --color-border: #1f1f1f;
+
+  --font-sans: 'Inter Variable', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+}
+
+/* Light theme override — values shadow the @theme defaults when data-theme=light */
+[data-theme='light'] {
+  --color-bg: #fafafa;
+  --color-bg-alt: #f0f0f0;
+  --color-fg: #0a0a0a;
+  --color-fg-muted: #666666;
+  --color-accent: #b45309;
+  --color-border: #e5e5e5;
+}
+
+html {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+code, pre, .mono {
+  font-family: var(--font-mono);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+/* Custom max-width utilities (v4 syntax) */
+@utility max-w-reading {
+  max-width: 72ch;
+}
+@utility max-w-gallery {
+  max-width: 1080px;
+}
+
+.prose { color: var(--color-fg); }
+.prose h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; }
+.prose h3 { font-size: 1.25rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+.prose p { margin-bottom: 1rem; }
+.prose a { color: var(--color-accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.prose ul, .prose ol { margin-bottom: 1rem; padding-left: 1.5rem; }
+.prose li { margin-bottom: 0.25rem; }
+.prose code { font-family: var(--font-mono); font-size: 0.875em; background: var(--color-bg-alt); padding: 0.15em 0.3em; border-radius: 3px; }
+.prose pre { background: var(--color-bg-alt); padding: 1rem; border-radius: 6px; overflow-x: auto; margin-bottom: 1rem; }
+.prose pre code { background: transparent; padding: 0; }
+.prose strong { color: var(--color-fg); font-weight: 600; }
+.prose em { color: var(--color-fg-muted); font-style: italic; }
+.prose blockquote { border-left: 3px solid var(--color-accent); padding-left: 1rem; color: var(--color-fg-muted); }

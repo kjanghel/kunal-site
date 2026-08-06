@@ -1,0 +1,20 @@
+---
+import ThemeToggle from './ThemeToggle.tsx';
+const links = [
+  { href: '/', label: '~/' },
+  { href: '/projects', label: 'projects' },
+  { href: '/blog', label: 'writing' },
+  { href: '/about', label: 'about' },
+  { href: '/resume', label: 'resume' },
+];
+---
+<header class="border-b border-border">
+  <nav class="max-w-gallery mx-auto flex items-center justify-between px-6 py-4 font-mono text-sm">
+    <ul class="flex gap-6">
+      {links.map(({ href, label }) => (
+        <li><a href={href} class="text-fg-muted hover:text-accent transition-colors">{label}</a></li>
+      ))}
+    </ul>
+    <ThemeToggle client:load />
+  </nav>
+</header>

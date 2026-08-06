@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+---
+<BaseLayout title="Projects — Kunal Janghel">
+  <div class="max-w-gallery mx-auto px-6 py-16">
+    <SectionHeader title="projects" />
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {projects.map(p => (
+        <ProjectCard
+          slug={p.id}
+          title={p.data.title}
+          subtitle={p.data.subtitle}
+          tags={p.data.tags}
+          liveUrl={p.data.liveUrl}
+        />
+      ))}
+    </div>
+  </div>
+</BaseLayout>

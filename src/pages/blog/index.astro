@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('posts', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+<BaseLayout title="Writing — Kunal Janghel">
+  <div class="max-w-reading mx-auto px-6 py-16">
+    <SectionHeader title="writing" />
+    {posts.length === 0 ? (
+      <p class="text-fg-muted">
+        No posts published yet. RSS: <a href="/rss.xml" class="text-accent hover:underline">/rss.xml</a>
+      </p>
+    ) : (
+      <ul class="space-y-6">
+        {posts.map(p => (
+          <li>
+            <a href={`/blog/${p.id}`} class="block group">
+              <h2 class="text-xl font-semibold group-hover:text-accent transition-colors">{p.data.title}</h2>
+              <p class="text-fg-muted mt-1">{p.data.description}</p>
+              <p class="font-mono text-xs text-fg-muted mt-2">
+                {p.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+              </p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+</BaseLayout>
