@@ -11,7 +11,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "typecheck": "astro check",
+    "pretest:e2e": "astro dev --port 4321",
     "test:e2e": "playwright test",
+    "posttest:e2e": "astro dev stop",
     "test:unit": "tsx --test src/lib/*.test.ts"
   },
   "dependencies": {
