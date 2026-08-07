@@ -20,8 +20,8 @@ const { title, subtitle, tags, liveUrl, repoUrl } = Astro.props;
       ))}
     </div>
     <div class="mt-4 flex gap-4 font-mono text-sm">
-      {liveUrl && <a href={liveUrl} class="text-accent hover:underline">↗ live</a>}
-      {repoUrl && <a href={repoUrl} class="text-accent hover:underline">↗ repo</a>}
+      {liveUrl && <a href={liveUrl} target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">↗ live</a>}
+      {repoUrl && <a href={repoUrl} target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">↗ repo</a>}
     </div>
     <div class="prose mt-10 leading-relaxed max-w-none">
       <slot />
