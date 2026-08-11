@@ -42,6 +42,20 @@ const ogImageUrl = new URL(ogImage, Astro.site).toString();
 
     <link rel="alternate" type="application/rss+xml" title="Kunal Janghel — Writing" href="/rss.xml" />
 
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kunal Janghel",
+      "url": "https://kunal.janghel.com/",
+      "image": "https://kunal.janghel.com/kunal.jpg",
+      "jobTitle": "Staff Software Engineer",
+      "description": "Staff Software Engineer · AI Agents + AppSec",
+      "sameAs": [
+        "https://github.com/kjanghel",
+        "https://www.linkedin.com/in/kunal-janghel/"
+      ]
+    })} />
+
     <script is:inline>
       const stored = localStorage.getItem('theme');
       if (stored === 'light') document.documentElement.setAttribute('data-theme', 'light');
