@@ -4,6 +4,7 @@ description: "Fine-grained tools feel right. For a real API with hundreds of ope
 date: 2026-08-11
 draft: true
 tags: ["mcp", "rag", "ai-agents", "api-design"]
+ogImage: "/og-mcp-server-for-a-real-api.png"
 ---
 
 496 operations, 250K tokens of YAML, one AI agent — and two tools to drive all of it. That number isn't a benchmark; it's the shape of the problem. When you wire an AI agent into a real API rather than a tutorial toy, the architecture has to earn every decision.
