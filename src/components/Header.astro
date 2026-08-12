@@ -1,18 +1,29 @@
 ---
 import ThemeToggle from './ThemeToggle.tsx';
 const links = [
-  { href: '/', label: '~/' },
+  { href: '/', label: '~/', home: true },
   { href: '/projects', label: 'projects' },
   { href: '/blog', label: 'writing' },
   { href: '/about', label: 'about' },
   { href: '/resume', label: 'resume' },
 ];
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isActive = (href: string) =>
+  href === '/' ? pathname === '/' : (pathname === href || pathname.startsWith(href + '/'));
 ---
 <header class="border-b border-border">
-  <nav class="max-w-gallery mx-auto flex items-center justify-between px-6 py-4 font-mono text-sm">
-    <ul class="flex gap-6">
-      {links.map(({ href, label }) => (
-        <li><a href={href} class="text-fg-muted hover:text-accent transition-colors">{label}</a></li>
+  <nav class="max-w-gallery mx-auto flex items-center justify-between px-6 py-4 font-mono text-sm md:text-base">
+    <ul class="flex gap-5 md:gap-6">
+      {links.map(({ href, label, home }) => (
+        <li>
+          <a
+            href={href}
+            class="nav-link text-fg-muted hover:text-accent transition-colors"
+            data-active={isActive(href) ? 'true' : 'false'}
+          >
+            {label}{home && <span class="terminal-cursor" aria-hidden="true">_</span>}
+          </a>
+        </li>
       ))}
     </ul>
     <ThemeToggle client:load />
