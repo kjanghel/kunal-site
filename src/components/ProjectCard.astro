@@ -8,7 +8,7 @@ interface Props {
 }
 const { slug, title, subtitle, tags, liveUrl } = Astro.props;
 ---
-<a href={`/projects/${slug}`} class="block border border-border rounded p-5 hover:border-accent hover:-translate-y-0.5 hover:shadow-[0_4px_14px_rgba(0,0,0,0.25)] motion-safe:transition-all motion-safe:duration-200 group">
+<a href={`/projects/${slug}`} class="reveal-on-scroll block border border-border rounded p-5 hover:border-accent hover:-translate-y-0.5 hover:shadow-[0_4px_14px_rgba(0,0,0,0.25)] motion-safe:transition-all motion-safe:duration-200 group">
   <h3 class="text-lg font-semibold group-hover:text-accent transition-colors">{title}</h3>
   <p class="text-fg-muted text-sm mt-1">{subtitle}</p>
   <div class="mt-4 flex flex-wrap gap-2">
